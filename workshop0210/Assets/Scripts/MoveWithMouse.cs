@@ -3,17 +3,16 @@ using UnityEngine;
 
 public class MoveWithMouse : MonoBehaviour
 {
+    // Start is called before the first frame update    
+    void Start() { }
+
     void Update()
     {
+
         if (Input.GetMouseButtonDown(0))
         {
-            // Get the point where the mouse was clicked
-            Vector3 mousePosition = Input.mousePosition;
-            mousePosition.z = 10; // set the z position to 10
-            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-
-            // Move the gameobject to the clicked position
-            transform.position = worldPosition;
+            Vector3 fieldPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z);
+            transform.position = fieldPos;
         }
     }
 }
